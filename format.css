@@ -1,12 +1,60 @@
-.maze {
-    user-select: none;
-    -webkit-user-select: none; /*Safari*/
-    -moz-user-select: none; /*Firefox*/
-    font-size: 12px !important;
-    font-family: "monospace";
-    line-height: 1;
+h1 {
+    text-align: center;
+    font-family: seaford;
 }
 
-input[type=radio] {
-    display: inline;
+h2 {
+    text-align: center;
+    font-family: seaford;
+}
+
+h3 {
+    font-family: seaford;
+}
+
+p {
+    font-size: medium;
+    font-family: seaford;
+}
+
+ol {
+    font-family: seaford;
+}
+
+li {
+    font-family: seaford;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+th, td  {
+    font-family: seaford;
+    border-bottom: 1px solid black;
+}
+
+.fe {
+    border-right: 1px solid black;
+}
+
+.fel {
+    border-right: 1px solid black;
+    border-bottom: 0px;
+}
+
+.le {
+    border-bottom: 0px;
+}
+
+table {
+    font-family: seaford;
+    border: 1px solid black;
+}
+
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

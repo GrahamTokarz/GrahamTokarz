@@ -6,12 +6,133 @@
         <meta property="og:site_name" content="Maze">
 
         <link rel = "stylesheet" type = "text/css" href = "format.css"/>
-        <title>Maze</title>
+        <link href="https://fonts.cdnfonts.com/css/seaford" rel="stylesheet">
+        <title>ML 4641 Team 18</title>
     </head>
-    <body>
-        <div id = "Title">
-            <h1>PLACEHOLDER TEXT</h1>
-            
+    <body style="background-color: #f2f2f2">
+        <div id = "Report" style="width: 70%; margin-left: 15%; margin-top: 2%;">
+            <h1>Proposal: Machine Learning for Signature Verification</h1>
+            <br>
+            <h2>Introduction / Background</h2>
+            <p>
+                Signature forgery is a widespread issue impacting banking, legal, and business sectors.
+                Forged signatures can lead to unauthorized access, fraudulent transactions, and significant
+                financial losses. Businesses, in particular, can suffer from fraudulent contracts and
+                unauthorized transactions, impacting their credibility and operational efficiency. Individuals
+                can also experience significant financial loss when forgers steal money from their accounts
+                or engage in fraudulent transactions using their forged signatures. Manual detection is
+                labor-intensive and prone to errors, necessitating an automated and reliable method for
+                verification.
+            </p>
+            <h3>Literature Review</h3>
+            <p>
+                Several studies have explored signature verification using machine learning. For example,
+                Poddar et al. (2020) proposed a method for signature recognition and forgery detection
+                using Convolutional Neural Networks (CNN), the Crest-Trough method, and the SURF
+                algorithm. They achieved an accuracy of 85-89% for forgery detection and 90-94% for
+                signature recognition. Another study by Justino et al. (2004) evaluated different learning
+                strategies and classification methods for offline signature verification. They found that
+                support vector machines (SVM) outperformed other methods in scenarios involving
+                forgeries. A systematic review by Abdelrahman et al (2021) highlighted the effectiveness of
+                deep learning-based models for offline signature verification, consolidating performances
+                across various public datasets.
+            </p>
+            <h3>Dataset Description</h3>
+            <p>
+                The dataset consists of images of signatures from 30 individuals, each with 5 genuine and 5
+                forged signatures. The images are named in a way that differentiates between genuine and
+                forged signatures.
+
+                It an be found <a href="https://www.kaggle.com/datasets/divyanshrai/handwritten-signatures/data">here</a>.
+            </p>
+            <br>
+            <h2>Problem Definitiion</h2>
+            <h3>Problem</h3>
+            <p>
+                The primary problem is to develop a machine learning model that can accurately distinguish
+                between genuine and forged signatures.
+            </p>
+            <h3>Motivation</h3>
+            <p>
+                Signature verification is important for preventing fraud and ensuring the authenticity of
+                documents. An automated system can significantly reduce the time and effort required for
+                manual verification while also increasing accuracy and reliability.
+            </p>
+            <br>
+            <h2>Methods</h2>
+            <h3>Data Processing</h3>
+            <ol>
+                <li><b>Image Resizing:</b> Standardize the size of all signature images to ensure uniformity.</li>
+                <li><b>Normalization:</b> Normalize pizel values to improve model performance.</li>
+                <li><b>Data Augmentation:</b> Apply transformations such as rotation, scaling, and translation
+                    to increase the diversity of training data.</li>
+            </ol>
+            <h3>Machine Learning Algorithms</h3>
+            <ol>
+                <li><b>Convolutional Neural Networks (CNN):</b> Effective for image based tasks due to their
+                    ability to capture spatial hierarchies in images.</li>
+                <li><b>Support Vector Machines (SVM):</b> Suitable for classification tasks especially with
+                    high dimensional data.</li>
+                <li><b>Random Forest:</b> Ensemble method that can handle various data types and provide
+                    robust classification performance.</li>
+            </ol>
+            <br>
+            <h2>(Potential) Results and Discussion</h2>
+            <h3>Quantitative Metrics</h3>
+            <ol>
+                <li><b>Accuracy:</b> Overall correctness of the model.</li>
+                <li><b>Precision:</b> Correctness of positive predictions.</li>
+                <li><b>Reccall:</b> Ability to identify all positive instances.</li>
+            </ol>
+            <h3>Project Goals</h3>
+            <ol>
+                <li>Achieve an accuracy of at least 90% on the test set.</li>
+                <li>Minimize false positive and false negative rates.</li>
+            </ol>
+            <br><br>
+        </div>
+        <div id="References" style="width: 70%; margin-left: 15%; margin-top: 2%;">
+            <h2>References</h2>
+            <l>
+                <li>J. Poddar, V. Parikh, and S. K. Bharti, “Offline Signature Recognition and Forgery Detection using Deep Learning,” Procedia Computer Science, vol. 170, pp. 610–617, Jan. 2020, doi: https://doi.org/10.1016/j.procs.2020.03.133.</li>
+                <li>S. N. Srihari, Aihua Xu and M. K. Kalera, "Learning strategies and classification methods for off-line signature verification," Ninth International Workshop on Frontiers in Handwriting Recognition, Kokubunji, Japan, 2004, pp. 161-166, doi: 10.1109/IWFHR.2004.61.</li>
+                <li>M. M. Hameed, R. Ahmad, M. L. M. Kiah, and G. Murtaza, “Machine learning-based offline signature verification systems: A systematic review,” Signal Processing: Image Communication, vol. 93, p. 116139, Apr. 2021, doi: https://doi.org/10.1016/j.image.2021.116139.</li>
+            </l>
+        </div>
+        <div id="Additional">
+            <br><br>
+            <h2>Gantt Chart</h2>
+            <img src="Gantt.png" style="width: 90vw;">
+            <br>
+            <h2>Contributions Table</h2>
+            <table style="width: 50%; margin-left: 25%">
+                <tr>
+                    <th class="fe">Member</th>
+                    <th>Contributions</th>
+                </tr>
+                <tr>
+                    <td class="fe">DB Lee</th>
+                    <td>Worked on creating the report and slides.</th>
+                </tr>
+                <tr>
+                    <td class="fe">Ansh Modi</th>
+                    <td>Worked on creating the slides, recorded the presentation.</th>
+                </tr>
+                <tr>
+                    <td class="fe">Hassaan Mohammed</th>
+                    <td>Worked on creating the report and slides, found literature.</th>
+                </tr>
+                <tr>
+                    <td class="fe">Chaitanya Nifadkar</th>
+                    <td>Worked on creating the report and slides.</th>
+                </tr>
+                <tr>
+                    <td class="fel">Joshua Graham Tokarz</th>
+                    <td class="le">Worked on the report, creation and formatting of GitHub Pages.</th>
+                </tr>
+            </table>
         </div>
     </body>
+    <footer style="width:50px; height: 10vh;"></footer>
 </html>
+
