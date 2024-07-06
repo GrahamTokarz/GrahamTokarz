@@ -10,7 +10,7 @@
         <title>ML 4641 Team 18</title>
     </head>
     <body style="background-color: #f2f2f2">
-        <div id = "Report" style="width: 70%; margin-left: 15%; margin-top: 2%;">
+        <div id="Report" style="width: 70%; margin-left: 15%; margin-top: 2%;">
             <h1>Proposal: Machine Learning for Signature Verification</h1>
             <br>
             <h2>Introduction / Background</h2>
@@ -59,36 +59,88 @@
                 manual verification while also increasing accuracy and reliability.
             </p>
             <br>
-            <h2>Methods</h2>
-            <h3>Data Processing</h3>
+            <h2>Methods (midterm update)</h2>
+
+            <h3>Data preprocessing</h3>
+            <ul>
+                <li>The image is read by OpenCV.</li>
+                <li>The image is converted from BGR to RGB format.</li>
+                <li>The image is resized to 224x224 pixels.</li>
+                <li>If the image is a genuine signature, it is labeled with a 1.</li>
+                <li>If the image is a forgery, it is labeled with a 0.</li>
+                <li>The data is then converted into numpy arrays.</li>
+                <li>The same function is used to process both the training and test images.</li>
+            </ul>
+
+
+            <h3>Model Description (midtem update)</h3>
             <ol>
-                <li><b>Image Resizing:</b> Standardize the size of all signature images to ensure uniformity.</li>
-                <li><b>Normalization:</b> Normalize pizel values to improve model performance.</li>
-                <li><b>Data Augmentation:</b> Apply transformations such as rotation, scaling, and translation
-                    to increase the diversity of training data.</li>
-            </ol>
-            <h3>Machine Learning Algorithms</h3>
-            <ol>
-                <li><b>Convolutional Neural Networks (CNN):</b> Effective for image based tasks due to their
-                    ability to capture spatial hierarchies in images.</li>
-                <li><b>Support Vector Machines (SVM):</b> Suitable for classification tasks especially with
-                    high dimensional data.</li>
-                <li><b>Random Forest:</b> Ensemble method that can handle various data types and provide
-                    robust classification performance.</li>
+                <li>
+                    <strong>Base Model:</strong>
+                    <ul>
+                        <li>Used VGG16 from tensorflow.keras.applications with pre-trained weights from 'imagenet'.</li>
+                        <li>Set include_top=False to exclude the top fully connected layers.</li>
+                        <li>Defined the input shape as (224, 224, 3).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Freeze Base Model:</strong>
+                    <ul>
+                        <li>We Set base_model.trainable = False to prevent the layers of the VGG16 model from being updated during training.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Custom Layers:</strong>
+                    <ul>
+                        <li><strong>Flatten layer:</strong> Converts the 2D feature maps from the base model to a 1D vector.</li>
+                        <li><strong>Dense layer:</strong> Adds a fully connected layer with 128 neurons and ReLU activation.</li>
+                        <li><strong>Dropout layer:</strong> Randomly sets 30% of neurons to 0 to prevent overfitting.</li>
+                        <li><strong>Output layer:</strong> Adds a fully connected layer with a single neuron and sigmoid activation for binary classification.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Model Definition:</strong>
+                    <ul>
+                        <li>Defined the model with the input from the base model and the output as the custom layers.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Model Compilation:</strong>
+                    <ul>
+                        <li>Compiled the model using RMSprop optimizer.</li>
+                        <li>Used binary crossentropy as the loss function.</li>
+                        <li>Included accuracy as a metric to evaluate the model performance.</li>
+                    </ul>
+                </li>
             </ol>
             <br>
-            <h2>(Potential) Results and Discussion</h2>
-            <h3>Quantitative Metrics</h3>
-            <ol>
-                <li><b>Accuracy:</b> Overall correctness of the model.</li>
-                <li><b>Precision:</b> Correctness of positive predictions.</li>
-                <li><b>Recall:</b> Ability to identify all positive instances.</li>
-            </ol>
-            <h3>Project Goals</h3>
-            <ol>
-                <li>Achieve an accuracy of at least 90% on the test set.</li>
-                <li>Minimize false positive and false negative rates.</li>
-            </ol>
+
+            <h2>Discussion of Results (midterm update)</h2>
+
+            <ul>
+                <li><strong>Accuracy</strong>: 0.6278</li>
+                <li><strong>Precision</strong>: 0.6055</li>
+                <li><strong>Recall</strong>: 0.7333</li>
+            </ul>
+
+            <h2>Interpretation of Metrics</h2>
+            <ul>
+                <li>
+                    <strong>Accuracy (62.78%)</strong>:
+                    <p>Accuracy measures the proportion of correctly predicted instances out of the total instances. An accuracy of 62.78% indicates that the model correctly predicted approximately 63 out of every 100 instances. This metric is helpful as an overall measure but can be misleading in cases of class imbalance.</p>
+                </li>
+                <li>
+                    <strong>Precision (60.55%)</strong>:
+                    <p>Precision is the ratio of true positive predictions to the total predicted positives (i.e., how many selected items are relevant). A precision of 60.55% means that out of all instances classified as positive, only about 61% were actually positive. This metric is crucial when the cost of false positives is high.</p>
+                </li>
+                <li>
+                    <strong>Recall (73.33%)</strong>:
+                    <p>Recall is the ratio of true positive predictions to the total actual positives (i.e., how many relevant items are selected). A recall of 73.33% indicates that the model identified approximately 73% of the actual positive instances. This metric is essential when the cost of false negatives is high.</p>
+                </li>
+            </ul>
+
+            <img src="matrix.png" alt="Confusion Matrix" />
+            <img src="graphs.png" alt="Confusion Matrix" />
             <br><br>
         </div>
         <div id="References" style="width: 70%; margin-left: 15%; margin-top: 2%;">
