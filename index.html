@@ -8,10 +8,97 @@
         <link rel = "stylesheet" type = "text/css" href = "format.css"/>
         <link href="https://fonts.cdnfonts.com/css/seaford" rel="stylesheet">
         <title>ML 4641 Team 18</title>
+        <script src="report.js"></script>
     </head>
+    <header style="position: fixed; top: 3vh; left: 85vw;">
+        <button onclick="proposal()">Proposal</button>
+        <button onclick="midterm()">Midterm</button>
+        <button onclick="final()">Final</button>
+    </header>
     <body style="background-color: #f2f2f2">
-        <div id="Report" style="width: 70%; margin-left: 15%; margin-top: 2%;">
+        <div id="ReportProposal" style="width: 70%; margin-left: 15%; margin-top: 2%;" hidden>
             <h1>Proposal: Machine Learning for Signature Verification</h1>
+            <br>
+            <h2>Introduction / Background</h2>
+            <p>
+                Signature forgery is a widespread issue impacting banking, legal, and business sectors.
+                Forged signatures can lead to unauthorized access, fraudulent transactions, and significant
+                financial losses. Businesses, in particular, can suffer from fraudulent contracts and
+                unauthorized transactions, impacting their credibility and operational efficiency. Individuals
+                can also experience significant financial loss when forgers steal money from their accounts
+                or engage in fraudulent transactions using their forged signatures. Manual detection is
+                labor-intensive and prone to errors, necessitating an automated and reliable method for
+                verification.
+            </p>
+            <h3>Literature Review</h3>
+            <p>
+                Several studies have explored signature verification using machine learning. For example,
+                Poddar et al. (2020) proposed a method for signature recognition and forgery detection
+                using Convolutional Neural Networks (CNN), the Crest-Trough method, and the SURF
+                algorithm. They achieved an accuracy of 85-89% for forgery detection and 90-94% for
+                signature recognition. Another study by Justino et al. (2004) evaluated different learning
+                strategies and classification methods for offline signature verification. They found that
+                support vector machines (SVM) outperformed other methods in scenarios involving
+                forgeries. A systematic review by Abdelrahman et al (2021) highlighted the effectiveness of
+                deep learning-based models for offline signature verification, consolidating performances
+                across various public datasets.
+            </p>
+            <h3>Dataset Description</h3>
+            <p>
+                The dataset consists of images of signatures from 30 individuals, each with 5 genuine and 5
+                forged signatures. The images are named in a way that differentiates between genuine and
+                forged signatures.
+
+                It can be found <a href="https://www.kaggle.com/datasets/divyanshrai/handwritten-signatures/data" target="_blank">here</a>.
+            </p>
+            <br>
+            <h2>Problem Definition</h2>
+            <h3>Problem</h3>
+            <p>
+                The primary problem is to develop a machine learning model that can accurately distinguish
+                between genuine and forged signatures.
+            </p>
+            <h3>Motivation</h3>
+            <p>
+                Signature verification is important for preventing fraud and ensuring the authenticity of
+                documents. An automated system can significantly reduce the time and effort required for
+                manual verification while also increasing accuracy and reliability.
+            </p>
+            <br>
+            <h2>Methods</h2>
+            <h3>Data Processing</h3>
+            <ol>
+                <li><b>Image Resizing:</b> Standardize the size of all signature images to ensure uniformity.</li>
+                <li><b>Normalization:</b> Normalize pizel values to improve model performance.</li>
+                <li><b>Data Augmentation:</b> Apply transformations such as rotation, scaling, and translation
+                    to increase the diversity of training data.</li>
+            </ol>
+            <h3>Machine Learning Algorithms</h3>
+            <ol>
+                <li><b>Convolutional Neural Networks (CNN):</b> Effective for image based tasks due to their
+                    ability to capture spatial hierarchies in images.</li>
+                <li><b>Support Vector Machines (SVM):</b> Suitable for classification tasks especially with
+                    high dimensional data.</li>
+                <li><b>Random Forest:</b> Ensemble method that can handle various data types and provide
+                    robust classification performance.</li>
+            </ol>
+            <br>
+            <h2>(Potential) Results and Discussion</h2>
+            <h3>Quantitative Metrics</h3>
+            <ol>
+                <li><b>Accuracy:</b> Overall correctness of the model.</li>
+                <li><b>Precision:</b> Correctness of positive predictions.</li>
+                <li><b>Recall:</b> Ability to identify all positive instances.</li>
+            </ol>
+            <h3>Project Goals</h3>
+            <ol>
+                <li>Achieve an accuracy of at least 90% on the test set.</li>
+                <li>Minimize false positive and false negative rates.</li>
+            </ol>
+            <br><br>
+        </div>
+        <div id="MidtermReport" style="width: 70%; margin-left: 15%; margin-top: 2%;" hidden>
+            <h1>Machine Learning for Signature Verification</h1>
             <br>
             <h2>Introduction / Background</h2>
             <p>
@@ -141,6 +228,365 @@
 
             <img src="matrix.png" alt="Confusion Matrix" />
             <img src="graphs.png" alt="Confusion Matrix" />
+            <br><br>
+        </div>
+        <div id="FinalReport" style="width: 70%; margin-left: 15%; margin-top: 2%;">
+            <h1>Machine Learning for Signature Verification</h1>
+            <br>
+            <h2>Introduction / Background</h2>
+            <p>
+                Signature forgery is a widespread issue impacting banking, legal, and business sectors.
+                Forged signatures can lead to unauthorized access, fraudulent transactions, and significant
+                financial losses. Businesses, in particular, can suffer from fraudulent contracts and
+                unauthorized transactions, impacting their credibility and operational efficiency. Individuals
+                can also experience significant financial loss when forgers steal money from their accounts
+                or engage in fraudulent transactions using their forged signatures. Manual detection is
+                labor-intensive and prone to errors, necessitating an automated and reliable method for
+                verification.
+            </p>
+            <h3>Literature Review</h3>
+            <p>
+                Several studies have explored signature verification using machine learning. For example,
+                Poddar et al. (2020) proposed a method for signature recognition and forgery detection
+                using Convolutional Neural Networks (CNN), the Crest-Trough method, and the SURF
+                algorithm. They achieved an accuracy of 85-89% for forgery detection and 90-94% for
+                signature recognition. Another study by Justino et al. (2004) evaluated different learning
+                strategies and classification methods for offline signature verification. They found that
+                support vector machines (SVM) outperformed other methods in scenarios involving
+                forgeries. A systematic review by Abdelrahman et al (2021) highlighted the effectiveness of
+                deep learning-based models for offline signature verification, consolidating performances
+                across various public datasets.
+            </p>
+            <h3>Dataset Description</h3>
+            <p>
+                The dataset consists of images of signatures from 30 individuals, each with 5 genuine and 5
+                forged signatures. The images are named in a way that differentiates between genuine and
+                forged signatures.
+
+                It can be found <a href="https://www.kaggle.com/datasets/divyanshrai/handwritten-signatures/data" target="_blank">here</a>.
+            </p>
+            <br>
+            <h2>Problem Definition</h2>
+            <h3>Problem</h3>
+            <p>
+                The primary problem is to develop a machine learning model that can accurately distinguish
+                between genuine and forged signatures.
+            </p>
+            <h3>Motivation</h3>
+            <p>
+                Signature verification is important for preventing fraud and ensuring the authenticity of
+                documents. An automated system can significantly reduce the time and effort required for
+                manual verification while also increasing accuracy and reliability.
+            </p>
+            <br>
+            <h2>Methods</h2>
+
+            <h3>Data preprocessing</h3>
+            <ul>
+                <li>The image is read by OpenCV.</li>
+                <li>The image is converted from BGR to RGB format.</li>
+                <li>The image is resized to 224x224 pixels.</li>
+                <li>If the image is a genuine signature, it is labeled with a 1.</li>
+                <li>If the image is a forgery, it is labeled with a 0.</li>
+                <li>The data is then converted into numpy arrays.</li>
+                <li>The same function is used to process both the training and test images.</li>
+            </ul>
+
+
+            <h3>Model Description</h3>
+            <ol>
+                <li>
+                    <strong>Base Model:</strong>
+                    <ul>
+                        <li>Used VGG16 from tensorflow.keras.applications with pre-trained weights from 'imagenet'.</li>
+                        <li>Set include_top=False to exclude the top fully connected layers.</li>
+                        <li>Defined the input shape as (224, 224, 3).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Freeze Base Model:</strong>
+                    <ul>
+                        <li>We Set base_model.trainable = False to prevent the layers of the VGG16 model from being updated during training.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Custom Layers:</strong>
+                    <ul>
+                        <li><strong>Flatten layer:</strong> Converts the 2D feature maps from the base model to a 1D vector.</li>
+                        <li><strong>Dense layer:</strong> Adds a fully connected layer with 128 neurons and ReLU activation.</li>
+                        <li><strong>Dropout layer:</strong> Randomly sets 30% of neurons to 0 to prevent overfitting.</li>
+                        <li><strong>Output layer:</strong> Adds a fully connected layer with a single neuron and sigmoid activation for binary classification.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Model Definition:</strong>
+                    <ul>
+                        <li>Defined the model with the input from the base model and the output as the custom layers.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Model Compilation:</strong>
+                    <ul>
+                        <li>Compiled the model using RMSprop optimizer.</li>
+                        <li>Used binary crossentropy as the loss function.</li>
+                        <li>Included accuracy as a metric to evaluate the model performance.</li>
+                    </ul>
+                </li>
+            </ol>
+            <br>
+
+            <h2>Results</h2>
+            
+            <h3>Model 1: SVM-based Signature Verification</h3>
+            <p>Model performance:</p>
+            <ul>
+                <li><strong>Training Accuracy</strong>: 1</li>
+                <li><strong>Testing Accuracy</strong>: 0.706</li>
+                <li><strong>Training Precision</strong>: 1</li>
+                <li><strong>Testing Precision</strong>: 0.706</li>
+                <li><strong>Training Recall</strong>: 1</li>
+                <li><strong>Testing Recall</strong>: 0.706</li>
+                <li><strong>Training F1 Score</strong>: 1</li>
+                <li><strong>Testing F1 Score</strong>: 0.705</li>
+            </ul>
+
+            <p>
+                The training accuracy of the SVM model is 100%, indicating that it perfectly classified the training data. However, the testing accuracy dropped to 70.6, suggesting overfitting. Where the model performs exceptionally well on the training data but poorly on unseen testing data. Precision, recall, and F1 score follow similar patterns, highlighting the discrepancy between training and testing performance.<br>
+            </p>
+            <p style="text-align: center;">
+                Confusion Matrix:<br>
+                [[62 28]<br>
+                [25 65]]<br>
+            </p>
+            <p>
+	            This confusion matrix shows that the model correctly identified 62 genuine signatures and 65 forged signatures. There were 28 false positives (genuine signatures identified as forged) and 25 false negatives (forged signatures identified as genuine).
+            </p>
+
+            <h3>Visualizations:</h3>
+            <br>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <th>Dataset</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+                <tr>
+                    <td class="le">Testing</td>
+                    <td class="le">0.755556</td>
+                    <td class="le">0.766204</td>
+                    <td class="le">0.755556</td>
+                    <td class="le">0.753086</td>
+                </tr>
+            </table>
+            <br>
+            <img src="SVM_Matrix.png">
+
+            <h3>Analysis of SVM Model</h3>
+            <p>Strengths:</p>
+            <ol>
+                <li>Perfect Training Performance: The model achieved 100% accuracy on the training set, indicating it learned the training data very well.</li>
+                <li>Decent Test Performance: A testing accuracy of 70.6% is still a reasonable starting point for signature verification tasks.</li>
+            </ol>
+
+            <p>Limitations:</p>
+            <ol>
+                <li>Overfitting: The model's perfect training accuracy and lower testing accuracy indicate overfitting. It memorized the training data but failed to generalize to new, unseen data.</li>
+                <li>Misclassifications: The confusion matrix shows significant misclassifications, suggesting the model struggles to differentiate between very similar genuine and forged signatures.</li>
+            </ol>
+            
+            <p>Trade-offs:</p>
+            <ol>
+                <li>Model Complexity vs. Generalization: While SVM with a linear kernel is less complex compared to deep learning models, it still overfitted the training data, impacting its ability to generalize.</li>
+                <li>Training Time vs. Performance: SVMs are generally faster to train on smaller datasets but may require careful tuning to balance performance on training and testing sets.</li>
+            </ol>
+
+            <p>Next Steps:</p>
+            <ol>
+                <li>Regularization: Introduce regularization techniques to prevent overfitting.</li>
+                <li>Data Augmentation: Apply data augmentation to increase the variability in the training data, helping the model generalize better.</li>
+                <li>Model Tuning: Experiment with different kernels and hyperparameters to find a better-performing SVM model.</li>
+                <li>Additional Features: Extract more informative features from the signatures to improve model performance.</li>
+            </ol>
+
+            <p>
+                Summary:<br><br>
+                &emsp;&emsp;The SVM model demonstrated good performance on the training set but showed signs of overfitting, leading to a drop in testing accuracy. With testing accuracy of 70.6, it still provides a baseline for signature verification tasks. Future work should focus on addressing overfitting and, perhaps, enhancing the model's ability to generalize unseen data.
+            </p>
+
+            <br>
+            <h3>Model 2: Random Forest-based Signature Verification</h3>
+            <p>Model performance:</p>
+            <ul>
+                <li><strong>Training Accuracy</strong>: 1</li>
+                <li><strong>Testing Accuracy</strong>: 0.756</li>
+                <li><strong>Training Precision</strong>: 1</li>
+                <li><strong>Testing Precision</strong>: 0.766</li>
+                <li><strong>Training Recall</strong>: 1</li>
+                <li><strong>Testing Recall</strong>: 0.756</li>
+                <li><strong>Training F1 Score</strong>: 1</li>
+                <li><strong>Testing F1 Score</strong>: 0.753</li>
+            </ul>
+
+            <p>
+                The training accuracy of the Random forest model is 100%, which means that it perfectly classified the training data. This, however, is problematic since the testing accuracy is 75.6 percent, suggesting overfitting. Precision, recall, and F1 score followed similar patterns which means there was discrepancy between training and testing performance.
+            </p>
+            <p style="text-align: center;">
+                Confusion Matrix:<br>
+                [[77 13]<br>
+                [31 59]]<br>  
+            </p>
+            <p>
+                This confusion matrix shows that the model correctly identified 77 genuine signatures and 59 forged signatures. There were 13 false positives(genuine signatures that were identified as forged) and 31 false negatives (forged signatures identified as genuine).
+            </p>
+
+
+            <h3>Visualizations:</h3>
+            <br>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <th>Dataset</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+                <tr>
+                    <td class="le">Testing</td>
+                    <td class="le">0.705556</td>
+                    <td class="le">0.705784</td>
+                    <td class="le">0.705556</td>
+                    <td class="le">0.705474</td>
+                </tr>
+            </table>
+            <br>
+            <img src="RF_Matrix.png">
+
+            <h3>Analysis of Random Forest Model</h3>
+            <p>Strengths:</p>
+            <ol>
+                <li>High Training Performance: The model achieved 100% accuracy on the training set, indicating it learned the training data very well.</li>
+                <li>Decent Test Performance: A testing accuracy of 75.6% is a reasonable starting point for signature verification tasks.</li>
+            </ol>
+
+            <p>Limitations:</p>
+            <ol>
+                <li>Overfitting: The model's perfect training accuracy and lower testing accuracy indicate overfitting. It memorized the training data but failed to generalize to new, unseen data.</li>
+                <li>Misclassifications: The confusion matrix shows significant misclassifications, suggesting the model struggles to differentiate between very similar genuine and forged signatures.</li>
+            </ol>
+            
+            <p>Trade-offs:</p>
+            <ol>
+                <li>Model Complexity vs. Generalization: While Random Forest models are robust and less likely to overfit than other models, in this case, it still overfitted the training data, impacting its ability to generalize.</li>
+                <li>Training Time vs. Performance: Random Forests are generally faster to train on smaller datasets but may require careful tuning to balance performance on training and testing sets.</li>
+            </ol>
+
+            <p>Next Steps:</p>
+            <ol>
+                <li>Regularization: Introduce regularization techniques to prevent overfitting.</li>
+                <li>Data Augmentation: Apply data augmentation to increase the variability in the training data, helping the model generalize better.</li>
+                <li>Model Tuning: Experiment with different hyperparameters to find a better-performing Random Forest model.</li>
+                <li>Additional Features: Extract more informative features from the signatures to improve model performance.</li>
+            </ol>
+
+            <p>
+                Summary:<br><br>
+                &emsp;&emsp;The Random Forest model demonstrated good performance on the training set but showed signs of overfitting, leading to a drop in testing accuracy. With a testing accuracy of 75.6%, it still provides a baseline for signature verification tasks. Future work should focus on addressing overfitting and enhancing the model's ability to generalize to unseen data.            
+            </p>
+
+            
+            <br>
+            <h3>Model 3: InceptionV3-based Signature Verification</h3>
+            <p>Model performance:</p>
+            <ul>
+                <li><strong>Accuracy</strong>: 0.824</li>
+                <li><strong>Precision</strong>: 0.817</li>
+                <li><strong>Recall</strong>: 0.822</li>
+                <li><strong>F1 Score</strong>: 0.819</li>
+            </ul>
+
+            <p>
+                The accuracy of the model is 82.4%, indicating that it correctly identifies genuine and forged signatures most of the time. The precision, recall, and F1 score are all around 0.82, suggesting a balanced performance in identifying both genuine and forged signatures.            </p>
+            <p style="text-align: center;">
+                Confusion Matrix:<br>
+                [[45 9]<br>
+                [7 30]]<br>  
+            </p>
+            <p>
+                This confusion matrix shows that the model correctly identified 45 genuine signatures and 30 forged signatures. There were 9 false positives (genuine signatures identified as forged) and 7 false negatives (forged signatures identified as genuine).            
+            </p>
+
+
+            <h3>Visualizations:</h3>
+            <br>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <th>Dataset</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+                <tr>
+                    <td class="le">Training</td>
+                    <td class="le">1</td>
+                    <td class="le">1</td>
+                    <td class="le">1</td>
+                    <td class="le">1</td>
+                </tr>
+                <tr>
+                    <td class="le">Testing</td>
+                    <td class="le">0.824176</td>
+                    <td class="le">0.817398</td>
+                    <td class="le">0.822072</td>
+                    <td class="le">0.819265</td>
+                </tr>
+            </table>
+            <br>
+            <img src="CNN_Matrix.png">
+
+            <h3>Analysis of CNN Model</h3>
+            <p>Strengths:</p>
+            <ol>
+                <li>High Initial Accuracy: The InceptionV3 model, combined with data augmentation and fine-tuning, achieved a relatively high accuracy.</li>
+                <li>Balanced Metrics: Precision, recall, and F1 scores indicate balanced performance, with the model effectively handling both classes.</li>
+            </ol>
+
+            <p>Limitations:</p>
+            <ol>
+                <li>Potential Overfitting: The model showed high accuracy on the training data but a slight drop in validation performance, indicating potential overfitting.</li>
+                <li>Confusion in Predictions: The confusion matrix shows some degree of misclassification, which suggests the model could be improved further, especially in distinguishing very similar genuine and forged signatures.</li>
+            </ol>
+            
+            <p>Trade-offs:</p>
+            <ol>
+                <li>Data Augmentation vs. Training Time: Data augmentation helps generalize better but increases training time.</li>
+                <li>Model Complexity vs. Interpretability: InceptionV3 is a complex model, making it less interpretable compared to simpler models like logistic regression or SVM.</li>
+            </ol>
+
+            <p>Next Steps:</p>
+            <ol>
+                <li>Hyperparameter Tuning: Further fine-tuning of the model's hyperparameters could improve performance.</li>
+                <li>Additional Data: Gathering more signature samples, especially more varied forged signatures, could help the model generalize better.</li>
+                <li>Model Ensemble: Combining predictions from multiple models might improve overall performance.</li>
+                <li>Feature Engineering: Experimenting with different feature extraction techniques could lead to better discrimination between genuine and forged signatures.</li>
+            </ol>
+
+            <p>
+                Summary:<br><br>
+                &emsp;&emsp;This model provides a solid baseline for automated signature verification using a deep learning approach. With an accuracy of over 82%, it demonstrates the potential for practical application in real-world scenarios. Future work should focus on addressing the identified limitations and exploring ways to enhance the model's robustness and accuracy.            
+            </p>
+            <br><br>
+            
+            <h2>Disussion</h2>
+            <p>
+                &emsp;&emsp;In this project, we evaluated three different models for signature verification: InceptionV3-based CNN, SVM, and Random Forest. Each model demonstrated unique strengths and weaknesses, providing valuable insights into their performance, generalization capabilities, and suitability. <br><br>
+                &emsp;&emsp;The InceptionV3-based CNN achieved the highest testing accuracy at 82.4%, outperforming the other models. It exhibited balanced precision, recall, and F1 scores, showing that it was effective in handling both genuine and forged signatures. The model’s use of data augmentation during training enhanced its ability to generalize, although it still showed some signs of potential overfitting. The deep learning architecture, though required significant computational resources, captured intricate patterns in the data, leading to its superior performance.<br><br>
+                &emsp;&emsp;The random forest model also performed well--it had a testing accuracy of 75.6. It demonstrated robustness against overfitting compared to the SVM model, despite it still showing some signs of it. The random forest model provided a good balance between performance and interpretability, making it a good option when computational resources are limited, and adequate interpretability is necessary. However, it had more misclassifications compared to the InceptionV3-based CNN, which can be seen from the confusion matrix.<br><br>
+                &emsp;&emsp;The SVM model was easier to implement, but it struggled with generalization. It achieved a testing accuracy of 70.6%, which was the lowest of the models we created. It also happened to show significant overfitting. The SVM model had the highest number of misclassifications, particularly in distinguishing between similar genuine and forged signatures. Its precision, recall, and F1 scores were also the highest, showing that it had challenges in accurately classifying signatures.<br><br>
+                &emsp;&emsp;To conclude, the InceptionV3-based CNN model outperformed both the SVM and Random Forest models in terms of accuracy and balanced performance metrics, making it the recommended choice for scenarios where high accuracy and balanced performance are important. The random forest model, despite being as accurate as CNN, offered a good balance between performance and interpretability, making it suitable for situations requiring faster training times and better interpretability. The SVM model, though the simplest to implement, could use some further work and improvements to enhance its performance and reduce overfitting. Overall, the inceptionV3-based CNN stands out as the best performer,  demonstrating the importance of advanced deep learning techniques in signature verification tasks.<br><br>
+            </p>
             <br><br>
         </div>
         <div id="References" style="width: 70%; margin-left: 15%; margin-top: 2%;">

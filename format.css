@@ -58,3 +58,18 @@ img {
   margin-right: auto;
   width: 50%;
 }
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    letter-spacing: 0.2px;
+    outline: 0;
+    font-size: 2vh; 
+    font-family: Seaford; 
+    border-radius: 2vw;
+    background-color: rgb(195, 207, 205); 
+  }
